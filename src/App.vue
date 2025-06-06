@@ -1,0 +1,231 @@
+<template>
+  <div id="app">
+    <Header />
+    <MainSection />
+    <HistorySection />
+    <ServiceSection />
+    <GallerySection />
+    <Footer />
+  </div>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue';
+import Header from './components/Header.vue';
+import MainSection from './components/MainSection.vue';
+import HistorySection from './components/HistorySection.vue';
+import ServiceSection from './components/ServiceSection.vue';
+import GallerySection from './components/GallerySection.vue';
+import Footer from './components/Footer.vue';
+
+export default defineComponent({
+  name: 'App',
+  components: {
+    Header,
+    MainSection,
+    HistorySection,
+    ServiceSection,
+    GallerySection,
+    Footer,
+  },
+});
+</script>
+
+<style>
+:root {
+  --font-family: "Arial", sans-serif;
+}
+
+svg {
+  cursor: pointer;
+}
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-size: 100%;
+  /* сброс размера текста */
+}
+
+body {
+  line-height: 1;
+  /* background: linear-gradient(180deg, #f0f4ff, #dfeaff); */
+  /* background: linear-gradient(145deg, #eef3ff, #cfd8ff); */
+  /* темный градиент */
+  background: linear-gradient(180deg, #ffffff, #e6f0ff);
+  /* Очень светлый */
+  /* background-attachment: fixed; */
+}
+
+ul,
+ol {
+  list-style: none;
+  /* удаляем маркеры списка */
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+  /* наследуем шрифт для кнопок и полей ввода */
+  border: none;
+  /* убираем границы */
+  outline: none;
+  /* убираем обводку */
+  background: none;
+  /* убираем фоновый цвет */
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  /* для адаптивных изображений */
+  height: auto;
+}
+
+table {
+  border-collapse: collapse;
+  /* удаляем отступы между ячейками */
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+  /* убираем подчеркивание у ссылок */
+  color: inherit;
+  /* наследуем цвет */
+}
+
+p {
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 151%;
+  letter-spacing: 0.03em;
+}
+
+.logo-panel {
+  position: relative;
+  margin-block-start: 9px;
+  margin-inline-start: 170px;
+}
+
+.button-btn {
+  text-align: center;
+  position: relative;
+  height: 76px;
+  border-radius: 20px;
+  width: 188px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 151%;
+  letter-spacing: 0.03em;
+  color: #fff;
+  background: #99baed;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  overflow: hidden;
+}
+
+.button-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 0;
+  top: 0;
+  height: 100%;
+  background-color: #abc3e8;
+  transition: width 0.3s ease;
+  z-index: 1;
+}
+
+.button-btn:hover {
+  color: #153461;
+}
+
+.button-btn:hover::after {
+  width: 100%;
+}
+
+.button-btn span {
+  position: relative;
+  /* Установка относительного позиционирования */
+  z-index: 2;
+  /* Установка текста выше псевдоэлемента */
+}
+
+.heading {
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 134%;
+  color: #163561;
+}
+
+.highlight {
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 134%;
+  color: #fbb400;
+}
+
+
+@media (max-width: 1024px) {
+  .logo-panel {
+    margin-inline-start: 20px;
+  }
+
+  .heading {
+    font-size: 55px;
+  }
+
+  .button-btn {
+    width: 150px;
+    /* Уменьшаем ширину кнопок */
+    height: 60px;
+    font-size: 18px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  body {
+    display: grid;
+    align-items: center;
+  }
+
+  .logo-panel {
+    margin-inline-start: 5px;
+  }
+
+  .highlight {
+    font-weight: 500;
+    font-size: 65px;
+    line-height: 94%;
+    color: #fbb400;
+  }
+
+  .heading {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .button-btn {
+    width: 100%;
+    font-size: 16px;
+    height: 55px;
+  }
+}
+</style>

@@ -1,0 +1,25 @@
+{
+  "name": "my-vue-app",
+  "version": "1.0.0",
+  "description": "A Vue.js application for a barber shop",
+  "main": "src/main.ts",
+  "scripts": {
+    "dev": "vite",
+    "serve": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.2.0",
+    "vue-router": "^4.0.0",
+    "vuex": "^4.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.0",
+    "vite": "^2.0.0",
+    "@vitejs/plugin-vue": "^1.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
