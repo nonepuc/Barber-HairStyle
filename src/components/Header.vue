@@ -13,10 +13,10 @@
     </div>
     <nav class="nav">
       <ul class="nav-menu" :class="{ 'show': isMenuOpen }">
-        <li><a href="#" class="active">Home</a></li>
-        <li><a href="#">History</a></li>
-        <li><a href="#">Service</a></li>
-        <li><a href="#">Gallery</a></li>
+        <li><a href="#" class="active" @click.prevent="scrollToTop">Home</a></li>
+        <li><a href="#history" @click.prevent="scrollToSection('history')">History</a></li>
+        <li><a href="#service" @click.prevent="scrollToSection('service')">Service</a></li>
+        <li><a href="#gallery" @click.prevent="scrollToSection('gallery')">Gallery</a></li>
       </ul>
     </nav>
     <div class="header-button">
@@ -52,26 +52,18 @@
       <button class="button-btn"><span>Appointment</span></button>
     </div>
   </header>
+  <button v-show="showScrollTop" class="scroll-top-btn" @click="scrollToTop" aria-label="Scroll to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="white" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" />
+    </svg>
+  </button>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from 'vue'
+<script setup lang="ts">
+import { useHeader } from './useHeaderActions'
 
-export default defineComponent({
-  name: 'Header',
-  setup() {
-    const isMenuOpen = ref(false)
-
-    const toggleMenu = () => {
-      isMenuOpen.value = !isMenuOpen.value
-    }
-
-    return {
-      isMenuOpen,
-      toggleMenu
-    }
-  }
-})
+const { isMenuOpen, showScrollTop, toggleMenu, scrollToSection, scrollToTop } = useHeader()
 </script>
 
 <style scoped>
@@ -83,7 +75,6 @@ export default defineComponent({
 .logo path {
   transition: transform 0.5s ease;
   transform-origin: center;
-  /* Поменяйте на нужную точку, если необходимо */
 }
 
 /* Эффект закрытия ножниц при наведении на весь логотип */
@@ -286,6 +277,30 @@ export default defineComponent({
   /* Изменение цвета обводки */
 }
 
+.scroll-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #99baed;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.scroll-top-btn:hover {
+  background-color: #7ba1e2;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
 @media (max-width: 1480px) {
   .logo-text {
     font-size: 30px;
@@ -361,6 +376,13 @@ export default defineComponent({
     flex-direction: column;
     gap: 20px;
     margin: 0;
+  }
+
+  .scroll-top-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
   }
 }
 </style>

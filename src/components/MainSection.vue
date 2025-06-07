@@ -30,7 +30,7 @@ export default {
   display: grid;
   grid-auto-flow: column;
   align-items: center;
-  grid-template-columns: minmax(100px, 620px);
+  grid-template-columns: minmax(100px, 630px);
   justify-content: center;
   column-gap: 20px;
   margin-left: 188px;

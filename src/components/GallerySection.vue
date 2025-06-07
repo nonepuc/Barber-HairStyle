@@ -1,5 +1,5 @@
 <template>
-    <section class="gallery-section">
+    <section id="gallery" class="gallery-section">
         <h2 class="heading gallery-title">
             Our <span class="highlight">Gallery</span>
         </h2>

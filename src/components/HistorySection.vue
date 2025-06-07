@@ -1,5 +1,5 @@
 <template>
-  <section class="history-section">
+  <section id="history" class="history-section">
     <div>
       <img src="../assets/icons/history-removebg.png" alt="History Photo" class="history-ing" />
     </div>
