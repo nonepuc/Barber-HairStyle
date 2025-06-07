@@ -3,7 +3,6 @@ import vue from '@vitejs/plugin-vue';
 import path from 'path';
 
 export default defineConfig({
-  base: '/Barber-HairStyle/', // Replace with your repository name
   plugins: [vue()],
   resolve: {
     alias: {
