@@ -10,6 +10,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write # Добавляем права на запись
+
     strategy:
       matrix:
         node-version: [16.x]
@@ -34,7 +37,8 @@ jobs:
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
-      if: github.ref == 'refs/heads/main'
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        deploy_key: ${{ secrets.DEPLOY_TOKEN }}
         publish_dir: ./dist
+        publish_branch: gh-pages
+        force_orphan: true
