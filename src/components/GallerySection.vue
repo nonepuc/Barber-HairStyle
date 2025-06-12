@@ -83,6 +83,23 @@ export default {
     display: block;
 }
 
+
+@media (max-width: 1480px) {
+    .gallery-section {
+        margin: 150px 20px 20px 20px;
+    }
+
+    .gallery-title {
+        font-size: 55px;
+    }
+
+    .image-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        margin-block-start: 40px;
+    }
+}
+
 @media (max-width: 768px) {
     .gallery-section {
         margin: 70px 20px 20px 20px;

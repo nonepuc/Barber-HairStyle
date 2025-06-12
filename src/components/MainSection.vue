@@ -53,6 +53,36 @@ export default {
   margin-block-start: 97px;
 }
 
+
+@media(max-width: 1480px) {
+  .main-btn {
+    width: 100%;
+    margin-block-start: 35px;
+  }
+
+  .main-section {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+    padding-left: 10px;
+  }
+
+  .main-image-photo {
+    margin-block-start: 10px;
+  }
+
+  .main-text-info {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .heading {
+    font-size: 36px;
+    line-height: 120%;
+    text-align: center;
+    margin-block-start: 20px;
+  }
+}
+
 @media (max-width: 768px) {
   .main-section {
     grid-auto-flow: row;

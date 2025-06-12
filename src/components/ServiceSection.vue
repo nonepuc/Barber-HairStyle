@@ -170,6 +170,24 @@ export default {
 }
 
 
+@media (max-width: 1480px) {
+  .service-cards {
+    margin-inline-start: 100px;
+    margin-inline-end: 100px;
+    gap: 30px;
+  }
+
+  .card {
+    padding: 40px 30px 60px 30px;
+  }
+
+  .card-title {
+    font-size: 36px;
+    line-height: 120%;
+  }
+}
+
+
 @media (max-width: 1024px) {
   .service-cards {
     flex-direction: column;

@@ -10,6 +10,6 @@ const routes = [
 ];
 
 export const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHashHistory(), //createWebHistory()для работы с HTML5 History API
   routes,
 });

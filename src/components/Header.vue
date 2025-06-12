@@ -312,11 +312,12 @@ const { isMenuOpen, showScrollTop, toggleMenu, scrollToSection, scrollToTop } = 
   }
 
   .nav-menu li a {
-    font-size: 20px;
-    padding: 30px 15px 5px;
+    font-size: 21px;
+    padding: 40px 15px 5px;
   }
 
   .header-button {
+    margin-block-start: 0px;
     gap: 50px;
   }
 }

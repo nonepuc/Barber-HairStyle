@@ -150,6 +150,56 @@ p {
   color: #fbb400;
 }
 
+@media (max-width: 1820px) {
+  .logo-panel {
+    margin-inline-start: 100px;
+  }
+
+  .heading {
+    font-size: 55px;
+  }
+
+  .button-btn {
+    width: 150px;
+    /* Уменьшаем ширину кнопок */
+    height: 60px;
+    font-size: 18px;
+  }
+
+    .highlight {
+    font-weight: 500;
+    font-size: 65px;
+    line-height: 74%;
+    color: #fbb400;
+  }
+}
+
+
+@media (max-width: 1480px) {
+  .logo-panel {
+    margin-block-start: 0px;
+    margin-inline-start: 30px;
+  }
+
+  .heading {
+    font-size: 35px;
+  }
+
+  .button-btn {
+    width: 150px;
+    /* Уменьшаем ширину кнопок */
+    height: 60px;
+    font-size: 18px;
+  }
+
+    .highlight {
+    font-weight: 500;
+    font-size: 65px;
+    line-height: 74%;
+    color: #fbb400;
+  }
+}
+
 
 @media (max-width: 1024px) {
   .logo-panel {
